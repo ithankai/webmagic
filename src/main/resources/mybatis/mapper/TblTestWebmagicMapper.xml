@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webmagic.demo.mapper.TblTestWebmagicMapper">
+  <resultMap id="BaseResultMap" type="com.webmagic.demo.entiy.TblTestWebmagic">
+    <!--@mbg.generated-->
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="URL" jdbcType="VARCHAR" property="url" />
+    <result column="TITLE" jdbcType="VARCHAR" property="title" />
+    <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+    <result column="ARTICLE_TEXT" jdbcType="VARCHAR" property="articleText" />
+    <result column="ARTICLE_LABEL" jdbcType="VARCHAR" property="articleLabel" />
+    <result column="VERSION" jdbcType="VARCHAR" property="version" />
+  </resultMap>
+  <insert id="insert" parameterType="com.webmagic.demo.entiy.TblTestWebmagic">
+    <!--@mbg.generated-->
+    insert into TBL_TEST_WEBMAGIC (ID, URL, TITLE, 
+      CREATE_TIME, ARTICLE_TEXT, ARTICLE_LABEL, 
+      VERSION)
+    values (#{id,jdbcType=DECIMAL}, #{url,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{articleText,jdbcType=VARCHAR}, #{articleLabel,jdbcType=VARCHAR}, 
+      #{version,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.webmagic.demo.entiy.TblTestWebmagic">
+    <!--@mbg.generated-->
+    insert into TBL_TEST_WEBMAGIC
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="url != null">
+        URL,
+      </if>
+      <if test="title != null">
+        TITLE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="articleText != null">
+        ARTICLE_TEXT,
+      </if>
+      <if test="articleLabel != null">
+        ARTICLE_LABEL,
+      </if>
+      <if test="version != null">
+        VERSION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="articleText != null">
+        #{articleText,jdbcType=VARCHAR},
+      </if>
+      <if test="articleLabel != null">
+        #{articleLabel,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

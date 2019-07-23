@@ -1,0 +1,22 @@
+server:
+  port: 8086
+
+
+#oracle
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@172.16.1.51:1521:YLDB
+    username: pospuat2
+    password: pospuat2
+
+#mybatis
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.webmagic.demo.entiy
+  mapper-locations:                                     # ???§Ö?mapper??????
+    - classpath:mybatis/mapper/**/*.xml
+
+logging:
+  level:
+    com.webmagic.demo.mapper: debug
